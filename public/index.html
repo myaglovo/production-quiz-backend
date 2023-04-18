@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Диплом</title>
+    <style>
+      @font-face {
+  font-family: "AvantGardeGothicDemiITC";
+  src: url("/font.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: white;
+  background: #b89d94;
+}
+
+.pdf {
+  width: 1240px;
+  height: 1754px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.logo {
+  max-height: 350px;
+}
+
+.bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.bg-dark {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  margin: 40px 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 60px 60px;
+}
+
+.wrapper div {
+  font-family: "AvantGardeGothicDemiITC";
+  color: #fcecd5;
+  line-height: 140%;
+  text-align: center;
+}
+
+.f-150 {
+  font-size: 150px;
+}
+
+.f-50 {
+  font-size: 50px;
+}
+
+.f-70 {
+  font-size: 70px;
+}
+
+.f-40 {
+  font-size: 40px;
+}
+
+.f-25 {
+  font-size: 25px;
+}
+
+.white {
+  color: white !important;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flexbox-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.block {
+  display: block;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+    </style>
+  </head>
+  <body>
+    <div class="pdf">
+      <img class="bg-img" src="./images/bg-img.png" alt="" class="bg-image" />
+      <div class="bg-dark">
+        <div class="wrapper">
+          <img class="logo" src="./images/logo.png" alt="" />
+          <div class="f-150">Диплом</div>
+          <div class="f-50">Награждается</div>
+          <div id="name" class="f-70 wrap">Архангельский Николай Васильевич</div>
+          <div class="f-40 white">
+            за успешное прохождение теста на знание истории Салехарда и вклада
+            ямальцев в&nbsp;Великую&nbsp;Победу
+          </div>
+          <div class="f-40">Результат: <span id="convertedScore">${convertedScore}</span> из 100 </div>
+          <div class="flexbox">
+            <div class="f-25 text-left">
+              Председатель городской думы <span class="block">муниципального образования</span><span class="block">город Салехард</span>
+            </div>
+            <div class="flexbox-child">
+              <img src="./images/sign.png" alt="" />
+              <div class="f-25 text-left nowrap">В.К. Мартынюк</div>
+            </div>
+          </div>
+          <div class="f-25 white">
+            <span>№ <span id="id">${id}</span></span>
+          </br>
+            <span>2023 г.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
