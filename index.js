@@ -55,25 +55,6 @@ app.post("/", async (req, res) => {
       status: "new",
     });
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.mail.ru",
-      port: 465,
-      secure: true,
-      auth: {
-        user: "team@salekhardpomnit.ru",
-        pass: "DDcfBvbX5jUyDm58XjCh",
-      },
-    });
-
-    // Настройте параметры сообщения
-    const mailOptions = {
-      from: "team@salekhardpomnit.ru",
-      to: "team@salekhardpomnit.ru",
-      subject: `Новая заявка ${name}`,
-      text: `Детали заявки: ${name}, ${email} /n http://тест.салехардпоминт.рф/admin`,
-    };
-
-    await transporter.sendMail(mailOptions);
     res.status(200).send("Success");
   } catch (error) {
     console.log(error);
