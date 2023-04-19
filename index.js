@@ -44,7 +44,7 @@ sequelize
   });
 
 // POST add user to DB
-app.post("/create-pdf", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const { name, email, score } = req.body;
 
