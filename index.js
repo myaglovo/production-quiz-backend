@@ -6,7 +6,7 @@ const Sequelize = require("sequelize");
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,6 +30,7 @@ const Record = sequelize.define("users", {
   pdf: Sequelize.BLOB,
 });
 
+// функция
 (async () => {
   const firstUser = await Record.findByPk(70);
   if (firstUser === null) {
