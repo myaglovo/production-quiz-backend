@@ -2,14 +2,11 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const fs = require("fs");
 const Sequelize = require("sequelize");
-const nodemailer = require("nodemailer");
-const puppeteer = require("puppeteer");
 
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,6 +30,14 @@ const Record = sequelize.define("users", {
   pdf: Sequelize.BLOB,
 });
 
+(async () => {
+  const firstUser = await Record.findByPk(70);
+  if (firstUser === null) {
+    console.log("Not found!");
+  } else {
+    console.log(firstUser.dataValues.name, firstUser instanceof Record);
+  }
+})();
 // аутенификация sequalize
 sequelize
   .authenticate()
